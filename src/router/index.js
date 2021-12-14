@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/settings',
     name: 'Settings',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Settings.vue'),
+    component: () => import(/* webpackChunkName: "settings" */ '../views/Settings.vue'),
     meta: {
       title: '番茄鐘 | 設定'
     }
@@ -25,7 +25,7 @@ const routes = [
   {
     path: '/list',
     name: 'List',
-    component: () => import(/* webpackChunkName: "about" */ '../views/List.vue'),
+    component: () => import(/* webpackChunkName: "list" */ '../views/List.vue'),
     meta: {
       title: '番茄鐘 | 事項'
     }
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/404',
     name: 'NotFound',
-    component: () => import(/* webpackChunkName: "about" */ '../views/NotFound.vue'),
+    component: () => import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue'),
     meta: {
       title: '番茄鐘 | 404'
     }
