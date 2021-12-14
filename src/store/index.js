@@ -13,7 +13,8 @@ export default new Vuex.Store({
     items: [],
     current: '',
     finished: [],
-    timeleft: time
+    timeleft: time,
+    break: false
   },
   mutations: {
     selectSound (state, data) {
@@ -50,7 +51,6 @@ export default new Vuex.Store({
       if (!state.break) {
         state.finished.push(state.current)
       }
-
       state.current = ''
       if (state.items.length > 0) {
         state.break = !state.break

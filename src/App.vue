@@ -1,6 +1,6 @@
 <template lang="pug">
 #app
-  b-navbar(toggleable='lg' type='dark' variant='danger')
+  b-navbar(toggleable='lg' type='dark' variant='info')
     b-container
       b-navbar-brand(to='/') 番茄鐘
       b-navbar-toggle(target='nav-collapse')

@@ -7,7 +7,7 @@
       b-col(cols="12")
         b-table(:items="items" :fields="fields" @row-clicked='select')
           template(#cell(src)="data")
-            audio(controls :src="require('@/assets/' +data.value)")
+            audio(controls :src="require('@/assets/'+data.value)")
           template(#cell(select)="data")
             span(v-if="data.item.src === sound") V
 </template>
@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       items: [
-        { name: '鬧鐘', src: 'alarm.mp3' },
+        { name: '鬧鈴', src: 'alarm.mp3' },
         { name: 'yay', src: 'yay.mp3' }
       ],
       fields: [

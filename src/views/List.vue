@@ -3,18 +3,24 @@
   b-container
     b-row
       b-col(cols="12")
-        h1.text-center 代辦事項
+        h1.text-center 待辦事項
       b-col(cols="12")
         b-form-group(label="新增事項" label-for="newinput" invalid-feedback="字數太少")
           b-form-input#newinput(v-model="newinput" :state="newinputstate" @keydown.enter="additem")
         b-btn.w-25.d-block.mx-auto(variant="success" block @click="additem") 新增
       b-col.my-3(cols="12")
-        b-table(:items="items" :fields="fields" show-empty striped)
+        b-table(:items="items" :fields="fields" show-empty striped hover)
           template(#empty)
             p.text-center 沒有項目
           template(#cell(name)="data")
-            b-form-input(v-if="data.item.edit" v-model="data.item.model" :state="data.item.state" @keydown.enter="submitedit(data.index)" @keydown.esc="canceledit(data.index)")
-            span(v-else) {{data.value}}
+            b-form-input(
+              v-if="data.item.edit"
+              v-model="data.item.model"
+              :state="data.item.state"
+              @keydown.enter="submitedit(data.index)"
+              @keydown.esc="canceledit(data.index)"
+            )
+            span(v-else) {{ data.value }}
           template(#cell(action)="data")
             span(v-if="data.item.edit")
               b-btn.mx-1(variant="success")
@@ -25,7 +31,7 @@
               b-btn.mx-1(variant="success")
                 b-icon(icon="pencil" @click="edititem(data.index)")
               b-btn.mx-1(variant="danger")
-                b-icon(icon="trash-fill" @click="delitem(data.index)")
+                b-icon(icon="trash" @click="delitem(data.index)")
       b-col(cols="12")
         h1.text-center 已完成
       b-col(cols="12")
